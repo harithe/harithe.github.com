@@ -1,0 +1,12 @@
+body { padding-top: 60px; }
+
+.posts li {
+	padding: 2px;
+}
+
+footer {
+	margin: 0 auto;
+	color: #aaa;
+	clear: both;
+	text-align: center;
+}
