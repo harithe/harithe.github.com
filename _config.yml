@@ -1,4 +1,4 @@
 auto: true
 pygments: true
-markdown: kramdown
+markdown: rdiscount
 permalink: pretty
