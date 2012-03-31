@@ -1,8 +1,8 @@
 ---
 layout: post
-title: named_scopeµÄÊ¹ÓÃ
+title: named_scopeçš„ä½¿ç”¨
 ---
-´ó¶àÊıÈËÖªµÀnamed_scope(²»ÖªµÀµÄ£¬¿ÉÒÔ²Î¿´named_scopeµÄÓÃ·¨)£¬µ«¿ÉÄÜ»¹²»ÖªµÀ named_scope½áºÏlambdaµÄÇ¿´óµÄÍşÁ¦¡£±ÈÈçrailscastsÖĞµÄCustom RoutesÖĞ µÄby_date·½·¨£¬ÎÒÃÇ¾Í¿ÉÒÔ½èÖúnamed_scope£¬½áºÏlambdaÀ´ÊµÏÖ£º
+å¤§å¤šæ•°äººçŸ¥é“named_scope(ä¸çŸ¥é“çš„ï¼Œå¯ä»¥å‚çœ‹named_scopeçš„ç”¨æ³•)ï¼Œä½†å¯èƒ½è¿˜ä¸çŸ¥é“ named_scopeç»“åˆlambdaçš„å¼ºå¤§çš„å¨åŠ›ã€‚æ¯”å¦‚railscastsä¸­çš„Custom Routesä¸­ çš„by_dateæ–¹æ³•ï¼Œæˆ‘ä»¬å°±å¯ä»¥å€ŸåŠ©named_scopeï¼Œç»“åˆlambdaæ¥å®ç°ï¼š
 {% highlight ruby %}
 named_scope :by_date, lambda { |year, month, day|
     conditions = []
@@ -12,8 +12,8 @@ named_scope :by_date, lambda { |year, month, day|
     {
       :conditions => [conditions.transpose.first.join(' AND '), *conditions.transpose.last]
     }}
-{% endhighlight %}	
-Ê¹ÓÃÏàµ±µÄ¼ò½à£º
+{% endhighlight %}    
+ä½¿ç”¨ç›¸å½“çš„ç®€æ´ï¼š
 {% highlight ruby %}
 @articles = Article.by_date(params[:year], params[:month], params[:day])
 {% endhighlight %}
