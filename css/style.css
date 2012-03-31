@@ -9,7 +9,7 @@ pre{display:block;padding:8.5px;margin:0 0 9px;font-size:12.025px;line-height:18
 pre code{padding:0;color:inherit;background-color:transparent;border:0;}
 .pre-scrollable{max-height:340px;overflow-y:scroll;}
 .container {
-	min-height: 768px;
+	
 }
 footer {
 	margin: 0 auto;
