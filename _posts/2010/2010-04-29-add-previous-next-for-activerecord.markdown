@@ -1,16 +1,15 @@
 ---
 layout: post
-title: ΪActiveRecord����next previous����
+title: 为ActiveRecord增加next previous方法
 ---
-
-ActiveRecord��һ����ruby��ORM��ܣ������Martin Fowler�����ġ���ҵӦ�üܹ�ģʽ���е�ActiveRecordģʽ��rubyʵ�֡���Ruby On Rails����У�ActiveRecord�ṩ�����ݳ־û���������
-ActiveRecord������˻�����ORMģʽ�Ķ����ϵӳ�䣬ͬʱ���ṩ��ǿ���ģ����֤�Ͳ�ѯ���ܡ�
-����һ�²����о���ʹ�õĵ�ǰ���µ���һƪ���º���һƪ������ ��һ��Ӧ�ã�
-���磺
-`post = Post.find(3)`
-�����������䣬�õ���һ��idΪ3��Post����Ȼ������õ����ڵ�idΪ2��idΪ4��Post���󣬰���ruby on rails��˼�룬�������Ͼͻ��뵽���Ƿ������post.next��post.previousֱ�ӵõ��أ�
-��ϧ���ǣ���û�����������������ǣ�ƾ��ruby��ǿ��Ķ�̬���Ե����ԣ����Ժܷ������չActiveRecord����ActiveRecord�ṩ�� ������ķ���:next��previous�������Ϳ��ԱȽϷ�����ҵ���ǰ��¼����һ��/��һ����¼��
-�����������������environment.rb�ļ��У��������µķ�����
+ActiveRecord是一个纯ruby的ORM框架，是针对Martin Fowler在他的《企业应用架构模式》中的ActiveRecord模式的ruby实现。在Ruby On Rails框架中，ActiveRecord提供了数据持久化的能力。
+ActiveRecord即完成了基本的ORM模式的对象关系映射，同时还提供了强大的模型验证和查询功能。
+考虑一下博客中经常使用的当前文章的上一篇文章和下一篇文章这 样一个应用，
+比如：
+{% highlight ruby %} post = Post.find(3) {% endhighlight %}
+我用上面的语句，得到了一个id为3的Post对象，然后，我想得到相邻的id为2和id为4的Post对象，按照ruby on rails的思想，可能马上就会想到，是否可以用post.next和post.previous直接得到呢？
+可惜的是，并没有这两个方法。但是，凭借ruby的强大的动态语言的特性，可以很方便的扩展ActiveRecord，给ActiveRecord提供两 个方便的方法:next和previous，这样就可以比较方便的找到当前记录的上一个/下一个记录。
+具体的做法，就是在environment.rb文件中，添加如下的方法：
 {% highlight ruby %}
 class ActiveRecord::Base
   def next
@@ -22,4 +21,4 @@ class ActiveRecord::Base
   end
 end
 {% endhighlight %}
-���������ǾͿ���ʹ��post.next��post.previous���ܷ���ĵõ�post����һ������һ��Post�����ˡ�
+这样，我们就可以使用post.next和post.previous来很方便的得到post的上一个和下一个Post对象了。
