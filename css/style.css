@@ -4,6 +4,10 @@ body { padding-top: 60px; }
 	padding: 2px;
 }
 
+code {
+	background-color: #423733;	
+}
+
 footer {
 	margin: 0 auto;
 	color: #aaa;
