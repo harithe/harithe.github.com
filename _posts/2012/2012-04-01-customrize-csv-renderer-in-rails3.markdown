@@ -122,7 +122,7 @@ module CsvRenderer
     require 'csv'
     csv_string = CSV.generate do |csv|
       object.each do |obj|
-        csv << obj.attributes.to_a # implementation
+        csv << obj.attributes.values.to_a # implementation
       end
     end
 
