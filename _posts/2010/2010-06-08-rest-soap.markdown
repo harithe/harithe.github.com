@@ -1,27 +1,27 @@
 ---
 layout: post
-title: REST��SOAP��˭���ã����߶��ã�
+title: REST和SOAP：谁更好，或者都好？
 ---
-Ŀǰ���󲿷�Web�������ƺ����˽�REST����һ�ֲ��ñ�׼URI���е��õķ�����REST���������⣬����ֻҪ��֧��HTTP/HTTPS�Ŀ� ����/��������֧�������������HTTP GET������ִ��������ԣ��������Ǹ��ܵ���REST�������ǣ������򵥡�ֻ����������Web������ʩ���Լ�ѧϰ�ɱ��͡�
+目前，大部分Web开发者似乎都了解REST——一种采用标准URI进行调用的方案。REST很容易理解，而且只要是支持HTTP/HTTPS的客 户端/服务器就支持它。你可以用HTTP GET方法来执行命令。所以，开发者们感受到的REST的优势是：开发简单、只需依托现有Web基础设施、以及学习成本低。
 
-Ȼ����SOAP��Ϊһ�ֹ��ϵ�Web�������������ڻ������˳���ʷ��̨�����ң�����SOAP 1.2�ĳ��֣�SOAPӡ���е�һЩȱ���ѵõ��Ľ��������ʺ����ó̶�Ҳ���õ���ߡ�����ע����ǣ���W3C SOAP 1.2�濪ʼ��SOAP��һ��д���ٴ���Simple Object Access Protocol���򵥶������Э�飩�����ǽ�����ΪЭ�����ƶ��ѡ�
+然而，SOAP作为一种古老的Web服务技术，短期内还不会退出历史舞台。而且，随着SOAP 1.2的出现，SOAP印象中的一些缺点已得到改进，采纳率和易用程度也都得到提高。另需注意的是，从W3C SOAP 1.2版开始，SOAP这一缩写不再代表Simple Object Access Protocol（简单对象访问协议），而是仅仅作为协议名称而已。
 
-���REST���ԣ�SOAP 1.2���һЩ������������Щ����Ҳ������һЩ�ô������ȣ�SOAP�����������벻��XML��Extensible Markup Language������չ������ԣ���SOAP�ŷ⣨envelope���ǻ���XML�ģ�����������Ϣ����ʲô�Լ���δ�������һ�������������͵ı���� �򣻹��̵��ú���Ӧ�Ĺ滮��SOAP�ŷ��ɴ���Э�飨HTTP/HTTPS��������RPC��Remote Procedure Call��Զ�̹��̵��ã��õ�ִ�У�Ȼ��һ��XML�ĵ���SOAP�ŷⷵ�ء�
+相对REST而言，SOAP 1.2多出一些开销，不过这些开销也带来了一些好处。首先，SOAP在三个方面离不开XML（Extensible Markup Language，可扩展标记语言）：SOAP信封（envelope）是基于XML的，它定义了消息里有什么以及如何处理它；一套用于数据类型的编码规 则；过程调用和响应的规划。SOAP信封由传输协议（HTTP/HTTPS）发出，RPC（Remote Procedure Call，远程过程调用）得到执行，然后一个XML文档随SOAP信封返回。
 
-��Ҫע����ǣ����ڡ�ͨ�á�����Э����SOAP��һ���ŵ㡣RESTĿǰ����HTTP/HTTPS����SOAP��֧���κδ���Э�飬��HTTP /HTTPS��SMTP��Simple Mail Transfer Protocol�����ʼ�����Э�飩������JMS��Java Messaging Service��Java��Ϣ���ݷ��񣩡�����������XML��Ϊ�߳��ҽ�����ʱ����˲���XMLҲ��Ϊһ���׶ˡ�
+需要注意的是，基于“通用”传输协议是SOAP的一个优点。REST目前基于HTTP/HTTPS；而SOAP可支持任何传输协议，从HTTP /HTTPS到SMTP（Simple Mail Transfer Protocol，简单邮件传送协议），甚至JMS（Java Messaging Service，Java消息传递服务）。不过，由于XML较为冗长且解析费时，因此采用XML也成为一个弊端。
 
-��������Web��������˵�ĺ���Ϣ�ǣ�Ŀǰ�������ַ���������֮��Ч�ķ�����REST��SOAP���ܽ������Web�������������ս�������������� ���£����Ǹ��Զ������㿪���ߵ�Ҫ��Ҳ����˵�ɻ���ʹ�á�
+不过，对Web开发者来说的好消息是，目前上述两种方案都是行之有效的方案。REST和SOAP都能解决许多Web方面的问题与挑战，而且在许多情 况下，它们各自都能满足开发者的要求，也就是说可互换使用。
 
-���ܶ��˲�֪���������ּ������Ի�ϴ���ʹ�á�REST�ܺ����⣬�Ҽ������֣�����������ȱ����׼�����ֻ��������һ�ּܹ���������֮�� �ȣ�SOAP��һ����ҵ��׼�����߱����ö����Э�飬�Լ�һ������ȷ���Ĺ����ڴ��ͺ�С��ϵͳ�о��в��á�
+但很多人不知道，这两种技术可以混合搭配使用。REST很好理解，且极易上手；不过由于它缺乏标准，因此只被看作是一种架构方法。与之相 比，SOAP是一个工业标准，它具备良好定义的协议，以及一套良好确立的规则，在大型和小型系统中均有采用。
 
-��ˣ�REST�����ó��ϰ�����
+因此，REST的适用场合包括：
 
-* ���޵Ĵ�������Դ �����˷��صĽṹ���Բ��ã��ɿ����߶���ģ��κθ�ʽ�����⣬����REST���ñ�׼��GET��PUT��POST��DELETE�� �ʣ���˿ɱ��κ��������֧�֡��������⣬REST������ʹ��ΪĿǰ����������֧�ֵ�XMLHttpRequest������ΪAJAX�� ɫ���١�
-��ȫ��״̬�Ĳ��� ������Щ��ಽִ�еĲ�����REST�������ѡ�񣬲���SOAP�����ʡ����ǣ��������Ҫ��״̬��CRUD��Create/Read/Update /Delete������/��ȡ/����/ɾ������������ôӦ����REST��
-���濼�� ��Ҫ������״̬���������ԣ�ʹ����Ϣ�ɱ����棬��ôREST�Ǻܺõ�ѡ��
-�����Ѿ����Ǻܶ෽���ˣ���ô��Ϊʲô��Ҫ����SOAP�أ�����ǰ����SOAP�Ƚϳ�������Ǿ������ö���ģ����������Ĺ淶����RESTֻ������ һ�ַ������Կ���δ���κι�Լ����ˣ��������������³��ϣ���ôSOAP�����ѡ��
+* 有限的带宽和资源 别忘了返回的结构可以采用（由开发者定义的）任何格式。另外，由于REST采用标准的GET、PUT、POST和DELETE动 词，因此可被任何浏览器所支持。除此以外，REST还可以使用为目前大多数浏览器支持的XMLHttpRequest对象，这为AJAX增 色不少。
+完全无状态的操作 对于那些需多步执行的操作，REST并非最佳选择，采用SOAP更合适。但是，如果你需要无状态的CRUD（Create/Read/Update /Delete，创建/读取/更新/删除）操作，那么应采用REST。
+缓存考虑 若要利用无状态操作的特性，使得信息可被缓存，那么REST是很好的选择。
+以上已经覆盖很多方案了，那么，为什么还要考虑SOAP呢？正如前述，SOAP比较成熟而且是经过良好定义的，具有完整的规范。而REST只不过是 一种方法，对开发未作任何规约；因此，假如你遇到以下场合，那么SOAP是最佳选择：
 
-* �첽��������� ������Ӧ����Ҫȷ���ɿ����밲ȫ�ԣ���ô�����SOAP��SOAP 1.2Ϊȷ�����ֲ������䶨����WSRM��WS-Reliable Messaging���ȱ�׼��
-��ʽ����Լ ���ṩ��/������˫������ͽ�����ʽȡ��һ�£���ô����SOAP�����ʡ�SOAP 1.2Ϊ���ֽ����ṩ���ϸ�Ĺ淶��
-��״̬�Ĳ��� ���Ӧ����Ҫ��������Ϣ��Ի�״̬��������ôӦ����SOAP��SOAP 1.2Ϊ�˲��䶨����WS-Security��WS-Transactions��WS-Coordination�ȱ�׼�����֮�£�REST����Ҫ�󿪷� ���Լ���ʵ����Щ����Թ�����
-�������������ģ�REST��SOAP������������֮�ء������ڰ�ȫ�Ժʹ����ȷ��������Լ���Ǳ�����⣬�������Ƕ���������񣬶�������������£� ���Ƕ��ḻ��Web�ļ����ֶΡ���ˣ�����һ���⣬��ʵ��õ�ԭ����������ԭ����Ϊ�������ֽ��Web�����У�������Ժ������⣬Web������������ �취���ú������ּ����е�һ�֡�
+* 异步处理与调用 如果你的应用需要确保可靠性与安全性，那么请采用SOAP。SOAP 1.2为确保这种操作补充定义了WSRM（WS-Reliable Messaging）等标准。
+形式化契约 若提供者/消费者双方必须就交换格式取得一致，那么采用SOAP更合适。SOAP 1.2为这种交互提供了严格的规范。
+有状态的操作 如果应用需要上下文信息与对话状态管理，那么应采用SOAP。SOAP 1.2为此补充定义了WS-Security、WS-Transactions和WS-Coordination等标准。相比之下，REST方法要求开发 者自己来实现这些框架性工作。
+正如你所看到的，REST和SOAP各自有其用武之地。它们在安全性和传输层等方面有着自己的潜在问题，不过它们都能完成任务，而且在许多情况下， 它们都丰富了Web的技术手段。因此，就这一论题，其实最好的原则就是灵活性原则；因为至少在现今的Web开发中，无论面对何种问题，Web开发者们总有 办法运用好这两种技术中的一种。
