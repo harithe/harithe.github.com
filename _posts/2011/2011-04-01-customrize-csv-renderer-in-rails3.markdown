@@ -19,21 +19,21 @@ title: 自定义Rails的CSV Render
 rails plugin new csv_renderer
 {% endhighlight %}
 
->      create
->      create  README.rdoc
->      create  Rakefile
->      create  csv_renderer.gemspec
->      create  MIT-LICENSE
->      create  .gitignore
->      create  Gemfile
->      create  lib/csv_renderer.rb
->      create  lib/tasks/csv_renderer_tasks.rake
->      create  lib/csv_renderer/version.rb
->      create  test/test_helper.rb
->      create  test/csv_renderer_test.rb
->      append  Rakefile
->  vendor_app  test/dummy
->         run  bundle install
+>  create
+>  create  README.rdoc
+>  create  Rakefile
+>  create  csv_renderer.gemspec
+>  create  MIT-LICENSE
+>  create  .gitignore
+>  create  Gemfile
+>  create  lib/csv_renderer.rb
+>  create  lib/tasks/csv_renderer_tasks.rake
+>  create  lib/csv_renderer/version.rb
+>  create  test/test_helper.rb
+>  create  test/csv_renderer_test.rb
+>  append  Rakefile
+>vendor_app  test/dummy
+>  run  bundle install
 
 (会在test/dummy目录下创建一个rails 的 app，可以用来在rails环境中运行和测试插件)
 
