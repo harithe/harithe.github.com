@@ -1,15 +1,15 @@
 ---
 layout: post
-title: FastArrayListµÄĞÔÄÜ²âÊÔ
+title: FastArrayListçš„æ€§èƒ½æµ‹è¯•
 ---
 
-java.util.ArrayList?(·ÇÍ¬²½)ÊÇJAVA¿ª·¢ÖĞ³£ÓÃµÄ¼¯ºÏÀà£¬apache commons collectionsÖĞÌá¹©ÁËÒ»¸öÖ±½Ó¼Ì³ĞArrayListµÄÊµÏÖ----FastArrayList£¬Ğ´ÁË±È½Ï¼òµ¥µÄ´úÂë²âÊÔÁËÒ»ÏÂ£¬ĞÔÄÜ½ÏArrayList¾ßÓĞºÜ´óµÄÌáÉı¡£
+java.util.ArrayList?(éåŒæ­¥)æ˜¯JAVAå¼€å‘ä¸­å¸¸ç”¨çš„é›†åˆç±»ï¼Œapache commons collectionsä¸­æä¾›äº†ä¸€ä¸ªç›´æ¥ç»§æ‰¿ArrayListçš„å®ç°----FastArrayListï¼Œå†™äº†æ¯”è¾ƒç®€å•çš„ä»£ç æµ‹è¯•äº†ä¸€ä¸‹ï¼Œæ€§èƒ½è¾ƒArrayListå…·æœ‰å¾ˆå¤§çš„æå‡ã€‚
 
-FastArrayListÊ¹ÓÃÁ½ÖÖÄ£Ê½£º
-1. slow-------¸ÃÄ£Ê½Ìá¹©ÁË¶àÏß³ÌÏÂÍ¬²½¹¦ÄÜ
-2. fast--------¸ÃÄ£Ê½Ã»ÓĞÌá¹©Í¬²½¹¦ÄÜ
+FastArrayListä½¿ç”¨ä¸¤ç§æ¨¡å¼ï¼š
+1. slow-------è¯¥æ¨¡å¼æä¾›äº†å¤šçº¿ç¨‹ä¸‹åŒæ­¥åŠŸèƒ½
+2. fast--------è¯¥æ¨¡å¼æ²¡æœ‰æä¾›åŒæ­¥åŠŸèƒ½
 
-²âÊÔ´úÂë£º
+æµ‹è¯•ä»£ç ï¼š
 {% highlight ruby %}
 import java.util.ArrayList;
 import org.apache.commons.collections.FastArrayList;
@@ -62,15 +62,15 @@ public class FastArrayListTrial {
     }
 }
 {% endhighlight %}
-½á¹û£º
+ç»“æœï¼š
 > UTIL ArrayList Milliseconds Taken = 204
 > SLOW FastArrayList Milliseconds Taken = 203
 > FAST FastArrayList Milliseconds Taken = 15
 > BUILD SUCCESSFUL (total time: 2 seconds)</blockquote>
 
-ÔÚfastÄ£Ê½ÏÂ£¬ĞÔÄÜµÄÌáÉı·Ç³£µÄÃ÷ÏÔ¡£
+åœ¨fastæ¨¡å¼ä¸‹ï¼Œæ€§èƒ½çš„æå‡éå¸¸çš„æ˜æ˜¾ã€‚
 
-¿´ÁËÒ»ÏÂFastArrayListµÄÔ´´úÂë£¬·¢ÏÖ»¹ÊÇ±È½Ï¼òµ¥µÄ£¬×îÖ÷ÒªµÄadd·½·¨£º
+çœ‹äº†ä¸€ä¸‹FastArrayListçš„æºä»£ç ï¼Œå‘ç°è¿˜æ˜¯æ¯”è¾ƒç®€å•çš„ï¼Œæœ€ä¸»è¦çš„addæ–¹æ³•ï¼š
 {% highlight ruby %}
 /**
  * Appends the specified element to the end of this list.
@@ -94,7 +94,7 @@ public boolean add(Object element) {
 }
 {% endhighlight %}	
 	
-×¢ÒâÀïÃæclone·½·¨µÄÊ¹ÓÃ¡£¶Ô¸Ã·½·¨½øĞĞÁËÏàÓ¦µÄ²âÊÔ£¬FastArrayListÔÚaddÉÏÃæµÄĞÔÄÜ£¬±ÈArrayListÒªºÃÉÏ½«½üÒ»±¶¡£add·½·¨²»¹ÜÊÇslow»¹ÊÇfastÄ£Ê½£¬¾ùÌá¹©Í¬²½¹¦ÄÜ¡£
+æ³¨æ„é‡Œé¢cloneæ–¹æ³•çš„ä½¿ç”¨ã€‚å¯¹è¯¥æ–¹æ³•è¿›è¡Œäº†ç›¸åº”çš„æµ‹è¯•ï¼ŒFastArrayListåœ¨addä¸Šé¢çš„æ€§èƒ½ï¼Œæ¯”ArrayListè¦å¥½ä¸Šå°†è¿‘ä¸€å€ã€‚addæ–¹æ³•ä¸ç®¡æ˜¯slowè¿˜æ˜¯fastæ¨¡å¼ï¼Œå‡æä¾›åŒæ­¥åŠŸèƒ½ã€‚
 {% highlight ruby %}
 public Object get(int index) {
 	if (fast) {
@@ -106,6 +106,6 @@ public Object get(int index) {
 	}
 }
 {% endhighlight %}
-get·½·¨£¬¿ÉÒÔ¿´µ½£¬Èç¹ûÊÇfastÄ£Ê½£¬Ôò²»Ìá¹©Í¬²½µÄ¹¦ÄÜ£º
-ÔÚ¶àÏß³ÌÇé¿öÏÂ£¬Èç¹ûÖ»ÊÇ¶ÁÈ¡Êı¾İ£¬ÎÒÃÇÍêÈ«¿ÉÒÔÊ¹ÓÃfastÄ£Ê½£¬ÒÔÈ¡µÃ¸üºÃµÄĞÔÄÜ¡£
+getæ–¹æ³•ï¼Œå¯ä»¥çœ‹åˆ°ï¼Œå¦‚æœæ˜¯fastæ¨¡å¼ï¼Œåˆ™ä¸æä¾›åŒæ­¥çš„åŠŸèƒ½ï¼š
+åœ¨å¤šçº¿ç¨‹æƒ…å†µä¸‹ï¼Œå¦‚æœåªæ˜¯è¯»å–æ•°æ®ï¼Œæˆ‘ä»¬å®Œå…¨å¯ä»¥ä½¿ç”¨fastæ¨¡å¼ï¼Œä»¥å–å¾—æ›´å¥½çš„æ€§èƒ½ã€‚
 
