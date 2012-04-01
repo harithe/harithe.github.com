@@ -6,8 +6,10 @@ title: FastArrayList的性能测试
 java.util.ArrayList?(非同步)是JAVA开发中常用的集合类，apache commons collections中提供了一个直接继承ArrayList的实现----FastArrayList，写了比较简单的代码测试了一下，性能较ArrayList具有很大的提升。
 
 FastArrayList使用两种模式：
+
 1. slow-------该模式提供了多线程下同步功能
 2. fast--------该模式没有提供同步功能
+
 
 测试代码：
 {% highlight java %}
