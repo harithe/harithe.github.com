@@ -10,7 +10,7 @@ FastArrayList使用两种模式：
 2. fast--------该模式没有提供同步功能
 
 测试代码：
-{% highlight ruby %}
+{% highlight java %}
 import java.util.ArrayList;
 import org.apache.commons.collections.FastArrayList;
 
@@ -71,7 +71,7 @@ public class FastArrayListTrial {
 在fast模式下，性能的提升非常的明显。
 
 看了一下FastArrayList的源代码，发现还是比较简单的，最主要的add方法：
-{% highlight ruby %}
+{% highlight java %}
 /**
  * Appends the specified element to the end of this list.
  *
@@ -95,7 +95,7 @@ public boolean add(Object element) {
 {% endhighlight %}	
 	
 注意里面clone方法的使用。对该方法进行了相应的测试，FastArrayList在add上面的性能，比ArrayList要好上将近一倍。add方法不管是slow还是fast模式，均提供同步功能。
-{% highlight ruby %}
+{% highlight java %}
 public Object get(int index) {
 	if (fast) {
 		return (list.get(index));
