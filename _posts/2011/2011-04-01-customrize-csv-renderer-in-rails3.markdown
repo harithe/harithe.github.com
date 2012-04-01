@@ -61,6 +61,46 @@ add :xml do |xml, options|
 end
 {% endhighlight %}
 
+在上面的方法里，直接使用了to_xml方法返回对象的xml形式。
+
+`self.content_type ||= Mime::XML`指定了HTTP响应的Mime types，在`mime_types.rb`文件中，定义了所有在Rails中可以使用的Mime types:
+{% highlight ruby %}
+# Build list of Mime types for HTTP responses
+# http://www.iana.org/assignments/media-types/
+
+Mime::Type.register "text/html", :html, %w( application/xhtml+xml ), %w( xhtml )
+Mime::Type.register "text/plain", :text, [], %w(txt)
+Mime::Type.register "text/javascript", :js, %w( application/javascript application/x-javascript )
+Mime::Type.register "text/css", :css
+Mime::Type.register "text/calendar", :ics
+Mime::Type.register "text/csv", :csv
+
+Mime::Type.register "image/png", :png, [], %w(png)
+Mime::Type.register "image/jpeg", :jpeg, [], %w(jpg jpeg jpe)
+Mime::Type.register "image/gif", :gif, [], %w(gif)
+Mime::Type.register "image/bmp", :bmp, [], %w(bmp)
+Mime::Type.register "image/tiff", :tiff, [], %w(tif tiff)
+
+Mime::Type.register "video/mpeg", :mpeg, [], %w(mpg mpeg mpe)
+
+Mime::Type.register "application/xml", :xml, %w( text/xml application/x-xml )
+Mime::Type.register "application/rss+xml", :rss
+Mime::Type.register "application/atom+xml", :atom
+Mime::Type.register "application/x-yaml", :yaml, %w( text/yaml )
+
+Mime::Type.register "multipart/form-data", :multipart_form
+Mime::Type.register "application/x-www-form-urlencoded", :url_encoded_form
+
+# http://www.ietf.org/rfc/rfc4627.txt
+# http://www.json.org/JSONRequest.html
+Mime::Type.register "application/json", :json, %w( text/x-json application/jsonrequest )
+
+Mime::Type.register "application/pdf", :pdf, [], %w(pdf)
+Mime::Type.register "application/zip", :zip, [], %w(zip)
+
+# Create Mime::ALL but do not add it to the SET.
+Mime::ALL = Mime::Type.new("*/*", :all, [])
+{% endhighlight %}
 所以，我们可以在controller中使用下面的方式来render一个xml:
 {% highlight ruby %}
 render :xml => @obj
