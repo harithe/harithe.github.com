@@ -7,7 +7,6 @@ java.util.ArrayList?(非同步)是JAVA开发中常用的集合类，apache commo
 
 FastArrayList使用两种模式：
 1. slow-------该模式提供了多线程下同步功能
-
 2. fast--------该模式没有提供同步功能
 
 测试代码：
