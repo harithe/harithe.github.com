@@ -133,32 +133,26 @@ end
 
 下面我们使用rails的scaffold来生成一个简单的测试例子:
 > test\dummy\script>rails g scaffold post title:string content:text
-
 > test\dummy>rake db:create:all
-
 > test\dummy>rake db:migrate
 
-> test\dummy\bundle exec rails s
+修改`PostsController`的index方法：
+{% highlight ruby %}
+def index
+@posts = Post.all
+
+respond_to do |format|
+  format.html # index.html.erb
+  format.json { render json: @posts }
+  format.csv { render csv: @posts}
+end
+end
+{% endhighlight %}
+启动Raikls Server:
+
+`test\dummy\bundle exec rails s`
 
 访问http://localhost:3000/posts.csv就可以看得生成的csv文件了。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 [Rails]: http://rubyonrails.org/
 [MVC]: http://baike.baidu.com/view/739359.htm
