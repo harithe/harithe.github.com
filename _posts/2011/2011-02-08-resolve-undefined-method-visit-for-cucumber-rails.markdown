@@ -1,7 +1,8 @@
 ---
 layout: post
-title: 解决NoMethodError: undefined method 'visit' for Cucumber::Rails
+title: 解决NoMethodError:undefined method 'visit' for Cucumber::Rails
 ---
+
 今天在rubymine下尝试了一下rubymine对cucumber的支持，可以是，rubymine是目前来说，
 对ruby and rails支持最好的IDE，没有之一。但在练习的过程中，碰到了一个奇怪的问题，run feature的时候，
 以致出现下面的错误：
