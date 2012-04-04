@@ -11,7 +11,7 @@ tar xvf yum-3.2.28.tar.gz
 cd yum-3.2.28
 yummain.py install yum
 出错：
-	依赖rpm
+ 依赖rpm
 2. 安装rpm
 	1. 下载: http://rpm.org/releases/rpm-4.8.x/rpm-4.8.1.tar.bz2
 	2. 安装rpm
