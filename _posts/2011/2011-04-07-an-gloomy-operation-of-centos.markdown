@@ -35,9 +35,9 @@ yum main.py install yum
 		checking for gcc... no</br>
 		checking for cc... no</br>
 		checking for cl.exe... no</br>
-		configure: error: in `/opt/softwares/centos/rpm-4.8.1':</br>
+		configure: error: in '/opt/softwares/centos/rpm-4.8.1':</br>
 		configure: error: no acceptable C compiler found in $PATH</br>
-		See `config.log' for more details.</br>
+		See 'config.log' for more details.</br>
 		需要重新安装gcc		
 	
 3. 安装gcc
